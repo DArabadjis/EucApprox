@@ -6,10 +6,11 @@ The official implementation of the paper "Euclidean Embedding of Data Using Loca
 
 ## Requirements
 
-This is a MATLAB code developed and tested in MATLAB R2023b.
+MATLAB code developed and tested in MATLAB R2023b.
 
-The code is dynamically parallelized if the number of embedding dimensions is large, using the Parallel Toolbox.
+The code is dynamically parallelized thread-wise, using the Parallel Computing Toolbox, if the number of embedding dimensions is large.
 
+Exploitation of a multigrid preconditioner for the iterative sparse Laplacian inversion builds upon Livermore’s "hypre" library of linear solvers (https://github.com/hypre-space/hypre). Only precompiled mex files of the preconditioner constructor are provided; hypre_amg_mex.mexw64 (win) , hypre_amg_mex.mexa64 (linux).
 
 ## Training
 
