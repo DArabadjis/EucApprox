@@ -20,7 +20,7 @@ Before running comparison experiments, one should:
    addpath(genpath(<path to Dimensionality Reduction Toolbox>)); addpath(genpath(<path to UMAP>));
    ```
 
-3. Place the intrinsic versions of the embedding methods, included in the repository's ```IntrnscVrs``` folder, in ```<path to Dimensionality Reduction Toolbox>```
+3. Place the intrinsic versions of the embedding methods, included in the repository's ```IntrnscVrs``` folder, in the ```techniques``` folder within the ```<path to Dimensionality Reduction Toolbox>```
 
 ## Training
 
