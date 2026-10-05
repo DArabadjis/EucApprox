@@ -16,7 +16,9 @@ Before running comparison experiments, one should:
 
 1. Download Laurens van der Maaten's [Toolbox for Dimensionality Reduction](https://lvdmaaten.github.io/drtoolbox/) and [UMAP](https://www.mathworks.com/matlabcentral/fileexchange/71902-uniform-manifold-approximation-and-projection-umap)
 
-2. ```addpath(genpath(<path to Dimensionality Reduction Toolbox>)); addpath(genpath(<path to UMAP>));```
+2. ```
+   addpath(genpath(<path to Dimensionality Reduction Toolbox>)); addpath(genpath(<path to UMAP>));
+   ```
 
 3. Place the intrinsic versions of the embedding methods, included in the repository's ```IntrnscVrs``` folder, in ```<path to Dimensionality Reduction Toolbox>```
 
