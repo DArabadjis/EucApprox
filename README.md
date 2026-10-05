@@ -1,6 +1,6 @@
 # EucApprox
 
-The official implementation of the paper "Euclidean Embedding of Data Using Local Distances" (https://arxiv.org/abs/2605.19243). 
+The official implementation of the paper ["Euclidean Embedding of Data Using Local Distances"](https://arxiv.org/abs/2605.19243). 
 
 >📋  Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
 
@@ -10,7 +10,13 @@ MATLAB code developed and tested in MATLAB R2023b.
 
 The code is dynamically parallelized thread-wise, using the Parallel Computing Toolbox, if the number of embedding dimensions is large enough to require more than 1sec / iteration.
 
-Exploitation of a multigrid preconditioner for the iterative sparse Laplacian inversion builds upon *Livermore’s "hypre" library of linear solvers* (https://github.com/hypre-space/hypre). Only precompiled mex files of the preconditioner constructor are provided: ```hypre_amg_mex.mexw64``` (win), ```hypre_amg_mex.mexa64``` (linux). Currently, the multigrid preconditioner incorporation is **experimental** and it may obstruct the algorithm's convergence. By default, this preconditioner is opted out and can be selected by setting the flag ```wAMG``` to ```true```.
+Exploitation of a multigrid preconditioner for the iterative sparse Laplacian inversion builds upon [*Livermore’s "hypre" library of linear solvers*](https://github.com/hypre-space/hypre). Only precompiled mex files of the preconditioner constructor are provided: ```hypre_amg_mex.mexw64``` (win), ```hypre_amg_mex.mexa64``` (linux). Currently, the multigrid preconditioner incorporation is **experimental** and it may obstruct the algorithm's convergence. By default, this preconditioner is opted out and can be selected by setting the flag ```wAMG``` to ```true```.
+
+Before running comparison experiments, one should  
+
+1. download Laurens van der Maaten's [Toolbox for Dimensionality Reduction](https://lvdmaaten.github.io/drtoolbox/) and [UMAP](https://www.mathworks.com/matlabcentral/fileexchange/71902-uniform-manifold-approximation-and-projection-umap)
+
+2.
 
 ## Training
 
