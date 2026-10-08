@@ -52,7 +52,34 @@ As it is, the code presumes that
 
 a) the data points are given in a tabular form, say in an ``` observations x features ``` matrix ```pX``` and 
 
-b) that there is a function handler ```fncD``` fitting the pattern ```@(x,y)<distance function>(x,y)```, where ```x``` stands for the data point in hand, ```y``` for its candidate neighbors (e.g the whole data set) and ```<distance function>``` for a function or a formula that computes the distances of all data points of ```y``` from ```x```
+b) that there is a function handler ```fncD``` fitting the pattern ```@(x,y)<distance function>(x,y)```, where ```x``` stands for the data point in hand, ```y``` for its candidate neighbors (e.g the whole data set) and ```<distance function>``` for a function or a formula that computes the distances of all data points of ```y``` from ```x```.
+
+The ```<distance function>``` is supposed to be accurate only locally, within each data point's neighborhood.
+
+The functions ```CmptDstSprs```, ```MnmlNghbrhdsODim``` and ```mkCnnctd```, used to construct the distance graph, exploit the tabular form of the dataset, ```pX```, only to determine the number of observations and iterate on them. If needed, one can easily modify these functions to fit any structure of ```pX```.
+
+#### v0 - pipeline
+
+1. Estimate the data set's intrinsic dimension using the minimal neighborhood method of [*Facco, E., d’Errico, M., Rodriguez, A. et al. Estimating the intrinsic dimension of datasets by a minimal neighborhood information. Sci Rep 7, 12140 (2017)*](https://doi.org/10.1038/s41598-017-11873-y)
+   ```eval
+   dstMtrx_2NN=CmptDstSprs(pX,fncD,false,3,false);
+   dmEstm=round(estmDim2NNs(dstMtrx_2NN,false))+1;
+   ```
+
+2. Using ```dmEstm```, two options are provided:
+   a) Determine the minimal distance graph whose neighborhoods are of rank ```dmEstm```
+      ```eval
+      dstMtrx=CmptDstSprs(pX,fncD,false,dmEstm,false);
+      ```
+   b) Determine the minimal distance graph whose neighborhoods have estimated rank  as close as possible to ```dmEstm```
+      ```eval
+      dstMtrx=MnmlNghbrhdsODim(false,dmEstm-0.5,pX,fncD);
+      ```
+
+3.  Connect the distance graph's connected components
+      ```eval
+      dstMtrx=mkCnnctd(pX,dstMtrx,fncD);
+      ```
 
 ## Evaluation
 
