@@ -42,7 +42,7 @@ wVlmFrm=false;wRcrsSlv=true;wAMG=false;wPlot=true;tlrnc=[];wErrOut=[];wPrllQ=[];
 [pXQ,errs]=EcldnEmbdngDatSgndNewCalc_Edge(dstMtrxEdge,pXEdge(:,1:dmEstm+2),dmEstm,wVlmFrm,wRcrsSlv,wAMG,wPlot,tlrnc,wErrOut,wPrllQ);
 ```
 
-The flags set before the iterative optimal embedding determination ```EcldnEmbdngDatSgndNewCalc_Edge``` are explained within this function's m-file. The given syntax requires convergence up to machine-epsilon (```tlrnc=[];```) and (due to ```wErrOut=[];```) returns into ```erout``` the pairs $(\mathrm{error~functional} , \mathrm{convergence})$, per iteration.
+The flags set before the iterative optimal embedding determination ```EcldnEmbdngDatSgndNewCalc_Edge``` are explained within this function's m-file. The given syntax requires convergence up to machine-epsilon (```tlrnc=[];```) and (due to ```wErrOut=[];```) returns into ```errs``` the pairs $(\mathrm{error~functional} , \mathrm{convergence})$, per iteration.
 
 ### Getting the neighborhoods' distance graph
 
@@ -81,15 +81,12 @@ The functions ```CmptDstSprs```, ```MnmlNghbrhdsODim``` and ```mkCnnctd```, used
       dstMtrx=mkCnnctd(pX,dstMtrx,fncD);
       ```
 
+
 ## Evaluation
 
-To evaluate my model on ImageNet, run:
+### Experiments and demo code
 
-```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
-```
-
->📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
+### Experiments' data
 
 ## Pre-trained Models
 
