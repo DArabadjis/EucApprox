@@ -97,3 +97,47 @@ The functions ```CmptDstSprs```, ```MnmlNghbrhdsODim``` and ```mkCnnctd```, used
 
 ### Experiments' data
 
+Data are provided in  
+https://e.pcloud.link/publink/show?code=kZLnliZ51ghbjdeRGRfIYEh7dVBAywNz6Ly
+
+#### DNA-seq
+
+Dataset collected from https://portal.gdc.cancer.gov/ and its raw data folder is in ```GDC-raw_data```
+
+The extracted features are in ```GDC-raw_data/GDC-lung-RNAseq/GDC-lung-RNAseq-tpm.mat```
+
+The extraction function is ```readGDCdata.m```
+
+**Results**:
+```PBMC_5k_DistEuc_FullDim.mat```: The results on the lung cancer dataset.
+- ```pX``` - original RNAseq data
+   
+- ```pY``` - cases' classification
+   
+- ```Diagnwseis``` - diagnosis of each class
+   
+- ```pXL``` - log2(1+pX)
+   
+- ```fncD ``` - distance function
+   
+- ```dmEstm_dmFull``` - intrinsic data dimension
+   
+- ```dstMtrxEdgeSparse``` - the graph adjacency matrix
+   
+- ```pXEdgeSparse``` - the metric trivializing local transports
+   
+- ```pX_Euc_short_short_sparse_dmEstm``` - the Euclidean embedding
+   
+- ```pX_Euc_VlmFrm_short_short_sparse_dmEstm``` - the Euclidean embedding computed after volume normalization of the local metric
+
+- ```datOut_dmEstm_*``` - <*> method's classification capability  
+   - ```prbsAcc``` - accuracy  
+	- ```prbs_ARI``` - adjusted rand index  
+	- ```prbs_NMI``` - normalized mutual information
+
+- ```datOutQuality_dmEstm_*``` - <*> method's embedding quality
+
+**Visualization** via ```demo_RNAseq_visualize.m```
+
+#### MNIST & FMNIST test set
+10-fold results - The test-set is randomly split in 10 independent parts to evaluate how methods perform in this high-dim space if the full distribution of 10k images is sparsely sampled.
