@@ -46,7 +46,13 @@ The flags set before the iterative optimal embedding determination ```EcldnEmbdn
 
 ### Getting the neighborhoods' distance graph
 
-The repository contains functions to prepare  
+The repository contains functions to estimate the embedding dimensionality ```dmEstm``` and prepare a corresponding distance matrix ```dstMtrx```.
+
+As it is, the code presumes that 
+
+a) the data points are given in a tabular form, say in an ``` observations x features ``` matrix ```pX``` and 
+
+b) that there is a function handler ```fncD``` fitting the pattern ```@(x,y)<distance function>(x,y)```, where ```x``` stands for the data point in hand, ```y``` for its candidate neighbors (e.g the whole data set) and ```<distance function>``` for a function or a formula that computes the distances of all data points of ```y``` from ```x```
 
 ## Evaluation
 
