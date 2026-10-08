@@ -6,7 +6,7 @@ The official implementation of the paper ["Euclidean Embedding of Data Using Loc
 
 ## Requirements
 
-MATLAB code developed and tested in MATLAB R2023b.
+MATLAB code is developed and tested in MATLAB R2023b.
 
 By default, when iterative sparse Laplacian inversion is enabled (```wRcrsSlv``` is ```true```), the execution is dynamically parallelized thread-wise, using the Parallel Computing Toolbox, if the number of embedding dimensions is large enough to require more than 1sec / embedding iteration. This can be deactivated by setting the last input ```wPrllQ``` of ```EcldnEmbdngDatSgndNewCalc_Edge``` to ```false```.
 
@@ -24,13 +24,22 @@ Before running comparison experiments, one should:
 
 ## Code usage pattern
 
+### Getting the embedding
+
 The embedding algorithm needs as input: 
 
 a) the (sparse) adjacency matrix of the distance graph of the data neighborhoods, say ```dstMtrx```,
 
 b) the embedding dimension, say ```dmEstm```.
 
-Then, 
+Then, the $ℝ^{\mathrm{dmEstm}}$ embedding, ```pXQ```, is obtained by the following archetypical call:
+
+```eval
+[pXEdge,dstMtrxEdge]=CmptLclBase(dstMtrx);  
+wVlmFrm=false;wRcrsSlv=true;wAMG=false;wPlot=true;tlrnc=[];wErrOut=[];wPrllQ=[];  
+[pXQ,errs]=EcldnEmbdngDatSgndNewCalc_Edge(dstMtrxEdge,pXEdge(:,1:dmEstm+2),dmEstm,wVlmFrm,wRcrsSlv,wAMG,wPlot,tlrnc,wErrOut,wPrllQ);
+```
+
 
 ## Evaluation
 
