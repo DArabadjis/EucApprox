@@ -4,7 +4,7 @@ This repository contains the official implementation of the *EucApprox* method f
 
 Previous versions : -
 
-Present version : 04/2026 - v0 - Implementation of the NeurIPS 2026 paper 
+Present version : 04/2026 - **v0** - Implementation of the NeurIPS 2026 paper 
 
 ## Requirements
 
@@ -66,12 +66,12 @@ The functions ```CmptDstSprs```, ```MnmlNghbrhdsODim``` and ```mkCnnctd```, used
    dmEstm=round(estmDim2NNs(dstMtrx_2NN,false))+1;
    ```
 
-2. Using ```dmEstm```, two options are provided:
+2. Using ```dmEstm```, two options are provided:  
    a) Determine the minimal distance graph whose neighborhoods are of rank ```dmEstm```
       ```eval
       dstMtrx=CmptDstSprs(pX,fncD,false,dmEstm,false);
       ```
-   b) Determine the minimal distance graph whose neighborhoods have estimated rank  as close as possible to ```dmEstm```
+   b) Determine the minimal distance graph whose neighborhoods have estimated rank  as close as possible to ```dmEstm```  
       ```eval
       dstMtrx=MnmlNghbrhdsODim(false,dmEstm-0.5,pX,fncD);
       ```
@@ -86,29 +86,14 @@ The functions ```CmptDstSprs```, ```MnmlNghbrhdsODim``` and ```mkCnnctd```, used
 
 ### Experiments and demo code
 
+```batchSynthetic.m``` - For experiments on drtoolbox synthetic datasets
+
+```demo_RNAseq_embddng.m``` - For experiments on RNAseq dataset  
+   - CmptDstSprs is slow here due to the 60660 dims of ```pXL```. Better preload ```PBMC_5k_DistEuc_FullDim.mat```
+         
+```batchRealMNIST.m``` - k-fold experiments on MNIST and FMNIST test sets 
+
+```prcss_MNIST_FMNIST.m``` - embedding experiment on the total MNIST and FMNIST test sets 
+
 ### Experiments' data
 
-## Pre-trained Models
-
-You can download pretrained models here:
-
-- [My awesome model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
-
->📋  Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
-
-## Results
-
-Our model achieves the following performance on :
-
-### [Image Classification on ImageNet](https://paperswithcode.com/sota/image-classification-on-imagenet)
-
-| Model name         | Top 1 Accuracy  | Top 5 Accuracy |
-| ------------------ |---------------- | -------------- |
-| My awesome model   |     85%         |      95%       |
-
->📋  Include a table of results from your paper, and link back to the leaderboard for clarity and context. If your main result is a figure, include that figure and link to the command or notebook to reproduce it. 
-
-
-## Contributing
-
->📋  Pick a licence and describe how to contribute to your code repository. 
