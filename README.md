@@ -1,8 +1,10 @@
 # EucApprox
 
-The official implementation of the paper ["Euclidean Embedding of Data Using Local Distances"](https://arxiv.org/abs/2605.19243). 
+This repository contains the official implementation of the *EucApprox* method for determining the functional form of the optimal Euclidean embedding of data. The provided code implements the methodology as presented in the ongoing preprint ["Euclidean Embedding of Data Using Local Distances"](https://arxiv.org/abs/2605.19243)
 
->📋  Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
+Previous versions : -
+
+Present version : 04/2026 - v0 - Implementation of the NeurIPS 2026 paper 
 
 ## Requirements
 
@@ -40,6 +42,11 @@ wVlmFrm=false;wRcrsSlv=true;wAMG=false;wPlot=true;tlrnc=[];wErrOut=[];wPrllQ=[];
 [pXQ,errs]=EcldnEmbdngDatSgndNewCalc_Edge(dstMtrxEdge,pXEdge(:,1:dmEstm+2),dmEstm,wVlmFrm,wRcrsSlv,wAMG,wPlot,tlrnc,wErrOut,wPrllQ);
 ```
 
+The flags set before the iterative optimal embedding determination ```EcldnEmbdngDatSgndNewCalc_Edge``` are explained within this function's m-file. The given syntax requires convergence up to machine-epsilon (```tlrnc=[];```) and (due to ```wErrOut=[];```) returns into ```erout``` the pairs $(\mathrm{error~functional} , \mathrm{convergence})$, per iteration.
+
+### Getting the neighborhoods' distance graph
+
+The repository contains functions to prepare  
 
 ## Evaluation
 
