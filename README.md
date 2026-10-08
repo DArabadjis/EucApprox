@@ -22,15 +22,15 @@ Before running comparison experiments, one should:
 
 3. Place the intrinsic versions of the embedding methods, included in the repository's ```IntrnscVrs``` folder, in the ```techniques``` folder within the ```<path to Dimensionality Reduction Toolbox>```
 
-## Training
+## Code usage pattern
 
-To train the model(s) in the paper, run this command:
+The embedding algorithm needs as input: 
 
-```train
-python train.py --input-data <path_to_data> --alpha 10 --beta 20
-```
+a) the (sparse) adjacency matrix of the distance graph of the data neighborhoods, say ```dstMtrx```,
 
->📋  Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
+b) the embedding dimension, say ```dmEstm```.
+
+Then, 
 
 ## Evaluation
 
