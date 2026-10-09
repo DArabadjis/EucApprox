@@ -4,7 +4,7 @@ This repository contains the official implementation of the *EucApprox* method f
 
 Previous versions : -
 
-Present version : 04/2026 - **v0** - Implementation of the NeurIPS 2026 paper 
+Present version : 04/2026 - **v0** - Implementation of the [NeurIPS 2026 paper](https://neurips.cc/virtual/2026/loc/paris/poster/149601).
 
 ## Requirements
 
