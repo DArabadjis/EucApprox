@@ -140,4 +140,4 @@ The extraction function is ```readGDCdata.m```
 **Visualization** via ```demo_RNAseq_visualize.m```
 
 #### MNIST & FMNIST test set
-10-fold results - The test-set is randomly split in 10 independent parts to evaluate how methods perform in this high-dim space if the full distribution of 10k images is sparsely sampled.
+```(f)mnist_test-10fold-short-short-sparse-dmFull-NewCalc.mat```: 10-fold results - The test set is randomly split into 10 independent parts to evaluate how methods perform in this high-dim space if the full distribution of 10k images is sparsely sampled.
