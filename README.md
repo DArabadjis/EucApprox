@@ -165,6 +165,11 @@ The extraction function is ```readGDCdata.m```
 - ```dstMtrx_dmFull```: graph adjacency matrix with the minimal neighborhoods of estimated rank equal to the data intrinsic dimension
 - ```pXQ_short_short_sparse_dmEstm```,```pXQ_VlmFrm_short_short_sparse_dmEstm```: the standard and uniform volume normalized *EucApprox* embeddings
 - ```errsAll_dmEstm```, ```errsAll_VlmFrm_dmEstm```: the corresponding pairs $(\mathrm{error~functional} , \mathrm{convergence})$, per iteration.
-- ```datOut_<NNs>_<method>```: the corresponding ```<method>``` embeddings' evaluations. For *EucApprox* the ```<method>``` designation is missing.
+- ```datOut_dmEstm_<method>```: the corresponding ```<method>``` embeddings' evaluations. For *EucApprox* the ```<method>``` designation is missing.
 
-```batchOut_dmFull_difficult_nXprmnts_15.mat```: Embeddings of the "difficult" dataset of the [Dimensionality Reduction Toolbox](https://lvdmaaten.github.io/drtoolbox/) for a varying number of neighbors (15 random samplings from the manifold per number of neighbors)
+```batchOut_dmFull_difficult_nXprmnts_15.mat```: Embeddings of the "difficult" dataset of the [Dimensionality Reduction Toolbox](https://lvdmaaten.github.io/drtoolbox/) for a varying number of neighbors (15 independent random samplings from the manifold)
+- ```Nnghbrs```: The tested numbers of neighbors
+- ```dstMtrxSlct```: per random sampling graph constructs
+  - ```pT``` : manifold's intrinsic coordinates
+  - ```dstMtrx``` : graph adjacency matrix, per number of nearest neighbors
+- ```dstMtrxSlctOut```: per random sampling embedding results
