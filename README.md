@@ -151,7 +151,7 @@ The extraction function is ```readGDCdata.m```
 
 #### Synthetic datasets
 
-```swiss-1k-06_12nn-1step.mat```, ```flatTorus-1k-05_12nn-1step.mat```, ```klein-2k-dmEstm.mat````: Embedding results for a varying number of neighbors on the Swiss roll, flat torus and Klein's bottle manifolds, respectively
+```swiss-1k-06_12nn-1step.mat```, ```flatTorus-1k-05_12nn-1step.mat```, ```klein-2k-dmEstm.mat```: Embedding results for a varying number of neighbors on the Swiss roll, flat torus and Klein's bottle manifolds, respectively
 - ```pX```: data points
 - ```pT```, ```pT0```: manifold coordination
 - ```dstMtrx_<NNs>```: ```<NNs>``` nearest neighbors' graph adjacency matrix
