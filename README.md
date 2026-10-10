@@ -71,7 +71,7 @@ The functions ```CmptDstSprs```, ```MnmlNghbrhdsODim``` and ```mkCnnctd```, used
       ```eval
       dstMtrx=CmptDstSprs(pX,fncD,false,dmEstm,false);
       ```
-   b) Determine the minimal distance graph whose neighborhoods have estimated rank  as close as possible to ```dmEstm```  
+   b) Determine the minimal distance graph whose neighborhoods have an estimated rank  as close as possible to ```dmEstm```  
       ```eval
       dstMtrx=MnmlNghbrhdsODim(false,dmEstm-0.5,pX,fncD);
       ```
@@ -151,9 +151,18 @@ The extraction function is ```readGDCdata.m```
 
 #### Synthetic datasets
 
-```swiss-1k-06_12nn-1step.mat```, ```flatTorus-1k-05_12nn-1step.mat```, ```klein-2k-dmEstm.mat```: Embedding results for a varying number of neighbors on the Swiss roll, flat torus and Klein's bottle manifolds, respectively
+```swiss-1k-06_12nn-1step.mat```, ```flatTorus-1k-05_12nn-1step.mat```: Embedding results for a varying number of neighbors on the Swiss roll, flat torus and Klein's bottle manifolds, respectively
 - ```pX```: data points
 - ```pT```, ```pT0```: manifold coordination
 - ```dstMtrx_<NNs>```: ```<NNs>``` nearest neighbors' graph adjacency matrix
 - ```pXQ_<NNs>```: the corresponding *EucApprox* embeddings
+- ```datOut_<NNs>_<method>```: the corresponding ```<method>``` embeddings' evaluations. For *EucApprox* the ```<method>``` designation is missing.
+
+```klein-2k-dmEstm.mat```: Klein's bottle embedding in $ℝ^4$
+- ```pX```: classical bottle figure in $ℝ^3$ (non-smooth embedding)
+- ```pT```, ```pT0```: manifold coordination in $𝕊^1 \times 𝕊^1$ and $ℝ^5$ ($(2n+1)$-isometry), rspectively
+- ```pT1```, ```pTiso```: Respectively, embedding of the flat Klein's bottle in $ℝ^4$ and approximation of the $C^1$ - isometry by IsoMap
+- ```dstMtrx_dmFull```: graph adjacency matrix with the minimal neighborhoods of estimated rank equal to the data intrinsic dimension
+- ```pXQ_short_short_sparse_dmEstm```,```pXQ_VlmFrm_short_short_sparse_dmEstm```: the standard and uniform volume normalized *EucApprox* embeddings
+- ```errsAll_dmEstm```, ```errsAll_VlmFrm_dmEstm```: the corresponding pairs $(\mathrm{error~functional} , \mathrm{convergence})$, per iteration.
 - ```datOut_<NNs>_<method>```: the corresponding ```<method>``` embeddings' evaluations. For *EucApprox* the ```<method>``` designation is missing.
