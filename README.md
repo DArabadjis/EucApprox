@@ -116,7 +116,7 @@ The extraction function is ```readGDCdata.m```
    
 - ```Diagnwseis``` - diagnosis of each class
    
-- ```pXL``` - log2(1+pX)
+- ```pXL``` - ```log2(1+pX)```
    
 - ```fncD ``` - distance function
    
@@ -166,3 +166,5 @@ The extraction function is ```readGDCdata.m```
 - ```pXQ_short_short_sparse_dmEstm```,```pXQ_VlmFrm_short_short_sparse_dmEstm```: the standard and uniform volume normalized *EucApprox* embeddings
 - ```errsAll_dmEstm```, ```errsAll_VlmFrm_dmEstm```: the corresponding pairs $(\mathrm{error~functional} , \mathrm{convergence})$, per iteration.
 - ```datOut_<NNs>_<method>```: the corresponding ```<method>``` embeddings' evaluations. For *EucApprox* the ```<method>``` designation is missing.
+
+```batchOut_dmFull_difficult_nXprmnts_15.mat```: Embeddings of the "difficult" dataset of the [Dimensionality Reduction Toolbox](https://lvdmaaten.github.io/drtoolbox/) for a varying number of neighbors (15 random samplings from the manifold per number of neighbors)
