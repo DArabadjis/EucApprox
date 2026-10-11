@@ -145,6 +145,16 @@ The extraction function is ```readGDCdata.m```
 
 ```(f)mnist_test-10fold-short-short-sparse-dmFull-NewCalc.mat```: 10-fold results - The test set is randomly split into 10 independent parts to evaluate how methods perform in this high-dim space if the full distribution of 10k images is sparsely sampled.
 
+- ```dstMtrxSlct```: The *EucApprox* embedding related entities, per fold
+  - ```dstMtrx```: adjacency matrix of the minimal graph (embedding dimension = number of neighbors)
+  - ```dstMtrx_dmFull```: adjacency matrix of the graph with the minimal neighborhoods of estimated rank equal to the embedding dimension
+  - ```pXQ_short_short_sparse_NewCalc```, ```pXQ_short_short_sparse_dmFull_NewCalc``` : the corresponding embeddings
+- ```datOut_*_dmFull``` - <*> method's embedding quality, ```datOut_short_short_sparse_dmFull_NewCalc``` - quality of the *EucApprox* embedding
+- ```datOutClss_*_dmFull``` - <*> method's classification capability , ```datOutClss_short_short_sparse_dmFull_NewCalc``` - classification capability of the *EucApprox* embedding
+  - ```prbsAcc``` - accuracy
+  - ```prbs_ARI``` - adjusted rand index
+  - ```prbs_NMI``` - normalized mutual information
+
 ```(f)mnist_graphConstructs_all.mat```: The whole dataset's distance graph and the corresponding metric trivializing fields and divergence / Laplacian operators.
 
 ```(f)mnist_embeddings_all.mat```: The embedding results on the whole dataset.
@@ -173,3 +183,5 @@ The extraction function is ```readGDCdata.m```
   - ```pT``` : manifold's intrinsic coordinates
   - ```dstMtrx``` : graph adjacency matrix, per number of nearest neighbors
 - ```dstMtrxSlctOut```: per random sampling embedding results
+  - ```pXQ_short_short_sparse_NewCalc```: embedding, per number of nearest neighbors
+  - ```errorsAll```: $(\mathrm{error~functional} , \mathrm{convergence})$, per iteration, per number of nearest neighbors
