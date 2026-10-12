@@ -88,7 +88,7 @@ The functions ```CmptDstSprs```, ```MnmlNghbrhdsODim``` and ```mkCnnctd```, used
 
 ```batchSynthetic.m``` - For experiments on drtoolbox synthetic datasets
 
-[Caution] Before running the following scripts, one should set inside them the path to the parent folder ```drctrRd``` to be the "experiments_results" folder locally
+[!Caution] Before running the following scripts, one should set inside them the path to the parent folder ```drctrRd``` to be the "experiments_results" folder locally
 
 ```demo_RNAseq_embddng.m``` - For experiments on RNAseq dataset  
    - CmptDstSprs is slow here due to the 60660 dims of ```pXL```. Better preload ```PBMC_5k_DistEuc_FullDim.mat```
