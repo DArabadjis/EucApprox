@@ -1,6 +1,6 @@
 clear all
 % first set the parent folder to be the "experiments_results" locally
-drctrRd='/home/darampatzis/MATLAB Drive/mathimata/prjctsCds/datasets/NeurIPS/';
+drctrRd='.../experiments_results/';
 drctrRd=[drctrRd,'GDC-raw_data/GDC-lung-RNAseq/'];
 load([drctrRd,'GDC-lung-RNAseq-tpm.mat'])
 pX=pX(:,5:end);pXL=log2(1+pX);
@@ -15,5 +15,5 @@ dmEstm_dmFull=round(estmDim2NNs(dstMtrx_dmFull,true))
 dstMtrx_dmFull=CmptDstSprs(pXL,fncD,false,dmEstm_dmFull+1,false);
 [pXEdgeSparse,dstMtrxEdgeSparse]=CmptLclBase(dstMtrx_dmFull);
 
-wVlmFrm=false;wRcrsSlv=tue;wAMG=false;wPlot=true;tlrnc=[];wErrOut=[];
+wVlmFrm=false;wRcrsSlv=true;wAMG=false;wPlot=true;tlrnc=[];wErrOut=[];
 pX_Euc_short_short_sparse_dmEstm=EcldnEmbdngDatSgndNewCalc_Edge(dstMtrxEdgeSparse,pXEdgeSparse(:,1:dmEstm_dmFull+3),dmEstm_dmFull+1,wVlmFrm,wRcrsSlv,wAMG,wPlot,tlrnc,wErrOut);
