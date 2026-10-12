@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "EucApprox: Euclidean Embedding of Data Using Local Distances"
+message: "If you use this software, please cite the NeurIPS 2026 paper."
+type: software
+authors:
+  - family-names: Arabadjis
+    given-names: Dimitris
+repository-code: "https://github.com/DArabadjis/EucApprox"
+preferred-citation:
+  type: conference-paper
+  title: "Euclidean Embedding of Data Using Local Distances"
+  authors:
+    - family-names: Arabadjis
+      given-names: Dimitris
+  conference:
+    name: "Advances in Neural Information Processing Systems"
+  year: 2026
