@@ -65,4 +65,3 @@ end
 end
 
 delete(gcp('nocreate'))
-exit
