@@ -1,6 +1,6 @@
 clear all
-%!!!!load CIFAR here!!!!!
-drctrRd='/home/darampatzis/MATLAB Drive/mathimata/prjctsCds/datasets/NeurIPS/';
+% first set the parent folder to be the "experiments_results" locally
+drctrRd='.../experiments_results/';
 %either mnist or fmnist
 wchOne='mnist'
 load([drctrRd,wchOne,'.mat']);
