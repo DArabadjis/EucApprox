@@ -1,6 +1,6 @@
 # Third-party software notices
 
-The independently authored EucApprox implementation is not distributed under a general open-source license. Copyright and permission information for that code appears in [COPYRIGHT.md](COPYRIGHT.md). The third-party components identified below retain their respective copyrights and licensing conditions.
+The independently authored EucApprox implementation is not distributed under a general open-source license. Copyright and permission information for that code appears in [LICENSE.md](LICENSE.md). The third-party components identified below retain their respective copyrights and licensing conditions.
 
 ## Modified DRToolbox routines
 
