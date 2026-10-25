@@ -17,7 +17,7 @@ The lung RNA-seq experimental dataset was **selected, assembled, and processed b
 
 The downloaded source files are included under `GDC-raw_data/`. The separately included MATLAB datasets and computed results are outputs of the author's processing scripts and experiments. The source records were provided by GDC; the downstream experimental dataset assembly, transformations, and analyses were performed by the EucApprox author. Processing source: https://github.com/DArabadjis/EucApprox/blob/main/EucldnEmbdngPublic/readGDCdata.m.
 
-**Source acknowledgment:** Heath, A. P., Ferretti, V., Agrawal, S. et al. “The NCI Genomic Data Commons.” *Nature Genetics* 53, 257–262 (2021). https://doi.org/10.1038/s41588-021-00791-5. This citation acknowledges the GDC resource.
+**Source acknowledgment:** Heath, A. P., Ferretti, V., Agrawal, S. et al. “The NCI Genomic Data Commons.” *Nature Genetics* 53, 257–262 (2021). https://doi.org/10.1038/s41588-021-00791-5.
 
 Where the downloaded records originate from TCGA, the TCGA Research Network is acknowledged: https://www.cancer.gov/tcga. GDC data-use conditions and source-project attribution policies continue to apply: https://gdc.cancer.gov/about-gdc/gdc-faqs.
 
