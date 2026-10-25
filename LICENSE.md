@@ -1,4 +1,4 @@
-Copyright (c) 2026 Dimitrios Arampatzis. All rights reserved.
+Copyright © 2026 Dimitrios Arampatzis. All rights reserved.
 
 This repository is made publicly available for inspection, reproducibility review,
 and non-commercial academic evaluation of the paper:
