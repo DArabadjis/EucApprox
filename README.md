@@ -1,6 +1,6 @@
 # EucApprox
 
-This repository contains the official implementation of the *EucApprox* method for determining the functional form of the optimal Euclidean embedding of data. The provided code implements the methodology as presented in the ongoing preprint ["Euclidean Embedding of Data Using Local Distances"](https://arxiv.org/abs/2605.19243)
+This repository contains the official implementation of the *EucApprox* method for determining the functional form of optimal Euclidean embedding of data. The provided code implements the methodology as presented in the ongoing preprint ["Euclidean Embedding of Data Using Local Distances"](https://arxiv.org/abs/2605.19243)
 
 Previous versions : -
 
