@@ -12,11 +12,13 @@ Original handwritten-digit data: Yann LeCun and Corinna Cortes (derived from NIS
 
 Copyright (c) 2017 Zalando SE. Distributed under the [MIT License](https://github.com/zalandoresearch/fashion-mnist/blob/master/LICENSE); when reproducing the dataset, include its original copyright and full license notice. The source-code repository includes a copy: [`THIRD_PARTY_LICENSES/FASHION-MNIST-LICENSE-MIT.txt`](https://github.com/DArabadjis/EucApprox/blob/main/THIRD_PARTY_LICENSES/FASHION-MNIST-LICENSE-MIT.txt). Converted files and experimental results are not a change of copyright ownership of the original images.
 
-## NCI GDC lung RNA-seq
+## Author-prepared lung RNA-seq dataset from NCI GDC open-access files
 
-Source: National Cancer Institute Genomic Data Commons, https://portal.gdc.cancer.gov/. Cite: Heath et al., *The NCI Genomic Data Commons*, Nat. Genet. **53**, 257–262 (2021), https://doi.org/10.1038/s41588-021-00791-5.
+This lung RNA-seq experimental dataset was **assembled and processed by Dimitris Arabadjis for EucApprox** using open-access files downloaded directly from the [NCI Genomic Data Commons (GDC)](https://portal.gdc.cancer.gov/). The original downloaded source files are included in the archive's `GDC-raw_data/` folder, alongside processed MATLAB datasets and experimental outputs. The MATLAB processing code is provided in the EucApprox repository as `EucldnEmbdngPublic/readGDCdata.m`.
 
-GDC prohibits reidentification attempts and distinguishes open- from controlled-access data (https://gdc.cancer.gov/analyze-data/data-analysis-policies). The publisher of this archive must verify access permissions for its GDC-derived clinical and expression records; the public code zip alone does **not** establish this status. Do **not** redistribute controlled-access data or data subject to prohibitive project DUAs. Add the project's identifiers and file manifest to `DATASETS.md` before treating GDC data provenance as complete.
+**Source acknowledgment, not attribution of downstream processing:** A. P. Heath, V. Ferretti, S. Agrawal, et al., *The NCI Genomic Data Commons*, *Nature Genetics* **53**, 257–262 (2021), https://doi.org/10.1038/s41588-021-00791-5. GDC asks researchers using its data to cite this paper. The author performed the dataset assembly, transformations and EucApprox evaluations. If the GDC downloads include TCGA source projects, also credit the [TCGA Research Network](https://www.cancer.gov/ccg/research/genome-sequencing/tcga/using-tcga-data/citing); follow attribution policies of any other originating projects.
+
+GDC open-access materials may be analyzed and used in publications with proper accreditation. Users must not attempt to reidentify participants; see the [GDC policies](https://gdc.cancer.gov/analyze-data/data-analysis-policies). This archive is intended to contain only the open-access source files selected by the dataset preparer and their derived results, not controlled-access records.
 
 ## Algorithmic outputs
 

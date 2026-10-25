@@ -21,25 +21,17 @@ This file documents datasets used in the experiments described by the EucApprox 
 - **Redistribution:** Where Fashion-MNIST data are redistributed, accompany them with the upstream copyright and MIT permission notice; do not represent the data as exclusively licensed by EucApprox.
 - **Suggested academic citation:** Han Xiao, Kashif Rasul, and Roland Vollgraf, *Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms*, arXiv:1708.07747 (2017).
 
-## NCI Genomic Data Commons (GDC) — lung RNA-seq data
+## Author-prepared lung RNA-seq dataset derived from NCI GDC open-access files
 
-- **Data provider:** National Cancer Institute (NCI) Genomic Data Commons: https://portal.gdc.cancer.gov/
-- **Access policy:** https://gdc.cancer.gov/analyze-data/data-analysis-policies
-- **Citation:** Heath, A. P., Ferretti, V., Agrawal, S., et al. *The NCI Genomic Data Commons*. **Nature Genetics** 53, 257–262 (2021). https://doi.org/10.1038/s41588-021-00791-5. Follow any additional attribution instructions for the originating project(s).
-- **Relevant local processing code:** `EucldnEmbdngPublic/readGDCdata.m` combines downloaded expression TSV files with GDC file-to-case metadata and clinical information; `EucldnEmbdngPublic/demo_RNAseq_embddng.m` is the demonstration script.
-- **Processed data described in the README:** `GDC-raw_data/GDC-lung-RNAseq/GDC-lung-RNAseq-tpm.mat` and `PBMC_5k_DistEuc_FullDim.mat`; the latter stores expression matrices, diagnosis/classification information, log-transformed values (`log2(1+pX)`), graph data, embeddings, and evaluation outputs.
+- **Dataset preparation:** Dimitris Arabadjis (EucApprox project). The lung RNA-seq experimental dataset was assembled and processed by the author from **open-access files that the author downloaded directly** from the [National Cancer Institute Genomic Data Commons (GDC)](https://portal.gdc.cancer.gov/). It is **not** a dataset published or processed by Heath et al.
+- **Source data:** The original downloaded GDC files are provided alongside the experimental results, under `experiments_results/GDC-raw_data/` in the separately distributed [experiments/data archive](https://e.pcloud.link/publink/show?code=kZLnliZ51ghbjdeRGRfIYEh7dVBAywNz6Ly). `GDC-raw_data` is the archive's folder name; it does not imply that the files are raw sequencing reads, rather than GDC-provided gene-expression quantifications or other source files.
+- **Author's processing code:** `EucldnEmbdngPublic/readGDCdata.m` reads GDC expression TSV files, associates them with downloaded JSON file/case metadata and clinical TSV information, and constructs the aligned expression matrix, gene metadata and diagnostic/classification labels. `EucldnEmbdngPublic/demo_RNAseq_embddng.m` demonstrates the embedding experiment.
+- **Prepared dataset:** `GDC-raw_data/GDC-lung-RNAseq/GDC-lung-RNAseq-tpm.mat` contains the assembled expression data, while `PBMC_5k_DistEuc_FullDim.mat` contains prepared inputs and experiment-derived distances, graphs, embeddings and evaluations as described in the repository README. The original downloaded files and the author's processed `.mat` outputs have distinct provenance.
+- **GDC acknowledgment (not authorship of the processed dataset):** A. P. Heath, V. Ferretti, S. Agrawal, et al., *The NCI Genomic Data Commons*, **Nature Genetics** 53, 257–262 (2021), https://doi.org/10.1038/s41588-021-00791-5. The GDC [explicitly requests this reference](https://gdc.cancer.gov/content/how-do-i-cite-nci-gdc) when researchers use data from its portal. Its citation acknowledges the GDC infrastructure and does not attribute the author's downstream curation, transformations, analyses, or embeddings to the paper's authors.
+- **Project-specific acknowledgment:** If the downloaded source files belong to TCGA, include the [TCGA Research Network acknowledgment](https://www.cancer.gov/ccg/research/genome-sequencing/tcga/using-tcga-data/citing); for other contributing GDC projects, follow their attribution policies where applicable. Specific project IDs should be recorded from the original download metadata rather than guessed.
+- **Use conditions:** The dataset was assembled from **GDC open-access source files**, as confirmed by the dataset preparer. GDC permits analysis and publication of open-access data with proper accreditation, but [prohibits reidentification attempts](https://gdc.cancer.gov/analyze-data/data-analysis-policies). This statement does not authorize redistribution of any controlled-access files; only the open-access source files and properly derived material should be provided in the public archive.
 
-**Access/redistribution qualification:** GDC's policy distinguishes *open access* from *controlled access*. Its open-access material has no GDC restrictions on analysis or publication other than its prohibition on reidentification attempts; controlled-access data may have project-specific Data Use Agreements (DUAs). **The GitHub repository zip does not contain the source download manifest or file IDs, so it is not possible to confirm from the examined material that every GDC-derived record in the external archive was originally open access.** Do not treat this description as verification that processed clinical data are redistributable. Before distributing/continuing to distribute the external RNA-seq archive, check the access classification and applicable project terms for every contributing file and associated clinical field.
-
-**Provenance details to complete from the original GDC download (not inferable from the code archive):**
-
-- GDC project identifier(s): **TO BE VERIFIED / FILLED IN BY MAINTAINER**.
-- Manifest / GDC file UUIDs and GDC data release date: **TO BE VERIFIED / FILLED IN BY MAINTAINER**.
-- Each contributing expression and clinical file's access category (`open`/`controlled`): **TO BE VERIFIED / FILLED IN BY MAINTAINER**.
-- Expression workflow and precise measurement column supplied as `varRd` to `readGDCdata.m` (e.g., TPM): **TO BE VERIFIED / FILLED IN BY MAINTAINER**.
-- Inclusion/exclusion criteria and diagnostic-label mapping: **TO BE VERIFIED / FILLED IN BY MAINTAINER**.
-
-**Privacy restriction:** Do not attempt reidentification of any GDC participant. Any controlled-access content must not be republished without appropriate authorization.
+**Suggested dataset attribution:** "Lung RNA-seq experimental dataset compiled and processed by Dimitris Arabadjis for EucApprox from publicly available NCI Genomic Data Commons files (original downloaded files and processed outputs supplied in the EucApprox experiments archive)." Cite the GDC infrastructure separately as above, and the original project where applicable.
 
 ## Synthetic test manifolds and DRToolbox examples
 
