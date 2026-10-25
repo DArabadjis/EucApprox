@@ -47,4 +47,4 @@ Synthetic datasets are generated for EucApprox experiments; some generators and 
 
 ## Copyright separation
 
-The rights in third-party source datasets are distinct from rights in independently authored EucApprox algorithms, processing scripts, analyses, and original documentation. See [COPYRIGHT.md](COPYRIGHT.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The rights in third-party source datasets are distinct from rights in independently authored EucApprox algorithms, processing scripts, analyses, and original documentation. See [LICENSE.md](LICENSE.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
