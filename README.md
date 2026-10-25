@@ -103,7 +103,7 @@ The functions ```CmptDstSprs```, ```MnmlNghbrhdsODim``` and ```mkCnnctd```, used
 Data are provided in  
 https://e.pcloud.link/publink/show?code=kZLnliZ51ghbjdeRGRfIYEh7dVBAywNz6Ly
 
-#### DNA-seq
+#### RNA-seq
 
 Dataset collected from https://portal.gdc.cancer.gov/ and its raw data folder is in ```GDC-raw_data```
 
