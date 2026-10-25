@@ -1,42 +1,50 @@
-# Datasets: provenance, attribution, and usage terms
+# Experimental datasets: sources, attribution, and reuse terms
 
-This file documents datasets used in the experiments described by the EucApprox repository and its [NeurIPS 2026 paper](https://arxiv.org/abs/2605.19243). **Dataset licenses and access conditions remain distinct from the copyright status of EucApprox software.** The repository distributes scripts; a separate [research-data archive](https://e.pcloud.link/publink/show?code=kZLnliZ51ghbjdeRGRfIYEh7dVBAywNz6Ly) is linked from its README.
+This document covers third-party datasets used in the experiments accompanying *EucApprox: Euclidean Embedding of Data Using Local Distances*. Experimental data and results are distributed separately from the [EucApprox code repository](https://github.com/DArabadjis/EucApprox).
 
-## MNIST handwritten digits
+## MNIST
 
-- **Creators / attribution:** Yann LeCun and Corinna Cortes; derivative of original NIST data.
-- **Source:** https://yann.lecun.com/exdb/mnist/ (historical dataset homepage); see also https://keras.io/api/datasets/mnist/.
-- **License statement:** [Creative Commons Attribution–ShareAlike 3.0](https://creativecommons.org/licenses/by-sa/3.0/) (as documented by Keras).
-- **Data used here:** The 10,000-image test split, converted to MATLAB/tabular representation with flattened image pixels, plus labels; see `(f)mnist.mat` / experiment files in the external data archive.
-- **Changes:** File-format conversion / flattening into MATLAB arrays and subsequent derived graph/embedding/evaluation outputs. The MNIST source data and labels were not created by EucApprox.
-- **Attribution when sharing:** Credit MNIST's copyright holders, identify the CC BY-SA 3.0 terms, link the dataset/source and license, and indicate the conversions. Further adaptations may trigger the license's ShareAlike requirements. These dataset terms do not govern independent EucApprox source files simply because they are stored in the same research collection.
+**Dataset:** MNIST handwritten digit database.  
+**Original attribution:** Yann LeCun and Corinna Cortes; derived from original NIST datasets.  
+**Source:** https://yann.lecun.com/exdb/mnist/  
+**License:** Creative Commons Attribution–ShareAlike 3.0 (CC BY-SA 3.0), as documented by the Keras MNIST dataset page: https://keras.io/api/datasets/mnist/  
+**License terms:** https://creativecommons.org/licenses/by-sa/3.0/
+
+The experimental archive contains MATLAB-formatted/flattened MNIST test-set data and separately computed experimental results. The original image and label data retain their source attribution and applicable license conditions. The format conversion does not transfer ownership of the original data.
 
 ## Fashion-MNIST
 
-- **Provider / copyright:** Zalando SE (2017).
-- **Source:** https://github.com/zalandoresearch/fashion-mnist
-- **License notice:** [MIT license](https://github.com/zalandoresearch/fashion-mnist/blob/master/LICENSE); a copy is in [`THIRD_PARTY_LICENSES/FASHION-MNIST-LICENSE-MIT.txt`](THIRD_PARTY_LICENSES/FASHION-MNIST-LICENSE-MIT.txt).
-- **Data used here:** The 10,000-image test split, flattened/converted into MATLAB arrays with class labels, plus graph/embedding/evaluation outputs.
-- **Changes:** MATLAB file-format conversion and the additional derived experimental constructs/results.
-- **Redistribution:** Where Fashion-MNIST data are redistributed, accompany them with the upstream copyright and MIT permission notice; do not represent the data as exclusively licensed by EucApprox.
-- **Suggested academic citation:** Han Xiao, Kashif Rasul, and Roland Vollgraf, *Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms*, arXiv:1708.07747 (2017).
+**Dataset:** Fashion-MNIST.  
+**Provider:** Zalando SE.  
+**Source:** https://github.com/zalandoresearch/fashion-mnist  
+**License:** MIT License, Copyright © 2017 Zalando SE.  
+**License notice:** [THIRD_PARTY_LICENSES/FASHION-MNIST-LICENSE-MIT.txt](THIRD_PARTY_LICENSES/FASHION-MNIST-LICENSE-MIT.txt)
 
-## Author-prepared lung RNA-seq dataset derived from NCI GDC open-access files
+The experimental archive contains MATLAB-formatted/flattened Fashion-MNIST test-set data and separately computed experimental results. The original image and label data retain Zalando's copyright and the applicable MIT notice.
 
-- **Dataset preparation:** Dimitris Arabadjis (EucApprox project). The lung RNA-seq experimental dataset was assembled and processed by the author from **open-access files that the author downloaded directly** from the [National Cancer Institute Genomic Data Commons (GDC)](https://portal.gdc.cancer.gov/).
-- **Source data:** The original downloaded GDC files are provided alongside the experimental results, under `experiments_results/GDC-raw_data/` in the separately distributed [experiments/data archive](https://e.pcloud.link/publink/show?code=kZLnliZ51ghbjdeRGRfIYEh7dVBAywNz6Ly). `GDC-raw_data` is the archive's folder name; it does not imply that the files are raw sequencing reads, rather than GDC-provided gene-expression quantifications or other source files.
-- **Author's processing code:** `EucldnEmbdngPublic/readGDCdata.m` reads GDC expression TSV files, associates them with downloaded JSON file/case metadata and clinical TSV information, and constructs the aligned expression matrix, gene metadata and diagnostic/classification labels. `EucldnEmbdngPublic/demo_RNAseq_embddng.m` demonstrates the embedding experiment.
-- **Prepared dataset:** `GDC-raw_data/GDC-lung-RNAseq/GDC-lung-RNAseq-tpm.mat` contains the assembled expression data, while `PBMC_5k_DistEuc_FullDim.mat` contains prepared inputs and experiment-derived distances, graphs, embeddings and evaluations as described in the repository README. The original downloaded files and the author's processed `.mat` outputs have distinct provenance.
-- **GDC acknowledgment:** A. P. Heath, V. Ferretti, S. Agrawal, et al., *The NCI Genomic Data Commons*, **Nature Genetics** 53, 257–262 (2021), https://doi.org/10.1038/s41588-021-00791-5.
-- **Project-specific acknowledgment:** If the downloaded source files belong to TCGA, include the [TCGA Research Network acknowledgment](https://www.cancer.gov/ccg/research/genome-sequencing/tcga/using-tcga-data/citing); for other contributing GDC projects, follow their attribution policies where applicable. Specific project IDs should be recorded from the original download metadata rather than guessed.
-- **Use conditions:** The dataset was assembled from **GDC open-access source files**, as confirmed by the dataset preparer. GDC permits analysis and publication of open-access data with proper accreditation, but [prohibits reidentification attempts](https://gdc.cancer.gov/analyze-data/data-analysis-policies). This statement does not authorize redistribution of any controlled-access files; only the open-access source files and properly derived material should be provided in the public archive.
+Suggested publication citation: H. Xiao, K. Rasul, and R. Vollgraf, “Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms,” arXiv:1708.07747, 2017.
 
-**Suggested dataset attribution:** "Lung RNA-seq experimental dataset compiled and processed by Dimitris Arabadjis for EucApprox from publicly available NCI Genomic Data Commons files (original downloaded files and processed outputs supplied in the EucApprox experiments archive)." Cite the GDC infrastructure separately as above, and the original project where applicable.
+## Lung RNA-seq data from NCI Genomic Data Commons
 
-## Synthetic test manifolds and DRToolbox examples
+**Source:** National Cancer Institute (NCI), Genomic Data Commons (GDC), https://portal.gdc.cancer.gov/  
+**Access status of downloaded source files:** Open access.  
+**Experimental dataset preparation and processing:** Dimitris Arabadjis, EucApprox project.
 
-Synthetic experiments are generated by the authors' code and, where indicated, the externally obtained DRToolbox example generators. Follow DRToolbox's non-commercial software restrictions for any redistributed modified generator code; see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+The EucApprox lung RNA-seq dataset was assembled and processed by Dimitris Arabadjis from open-access gene-expression and associated metadata files downloaded directly from the GDC. The archive includes the downloaded source files in its `GDC-raw_data/` folder and the assembled/processed MATLAB datasets and experiment results. The original downloaded material and the EucApprox-derived data are distinguishable by their provenance.
 
-## Separate data archive
+The processing code is `EucldnEmbdngPublic/readGDCdata.m`; it associates GDC gene-expression TSV files with GDC file/case metadata and clinical annotations, producing aligned expression matrices and diagnostic labels. The experimental outputs include the transformed input data, distance graphs, embeddings, and performance measurements. The original GDC source data were not created by the EucApprox author.
 
-When distributing MATLAB copies of datasets outside GitHub, place [`DATA_ARCHIVE_NOTICE.md`](DATA_ARCHIVE_NOTICE.md) (and the applicable license texts/links) **inside that download** so attribution does not depend on readers first visiting the source-code repository.
+**GDC source acknowledgment:** A. P. Heath, V. Ferretti, S. Agrawal et al., “The NCI Genomic Data Commons,” *Nature Genetics*, 53, 257–262 (2021). https://doi.org/10.1038/s41588-021-00791-5  
+**GDC citation guidance:** https://gdc.cancer.gov/content/how-do-i-cite-nci-gdc
+
+This citation credits the GDC infrastructure and data source; it does **not** attribute the author's dataset selection, assembly, processing, analysis, or EucApprox results to the cited paper. Where source files originate from The Cancer Genome Atlas (TCGA), acknowledgment of the TCGA Research Network also applies: https://www.cancer.gov/ccg/research/genome-sequencing/tcga/using-tcga-data/citing.
+
+GDC open-access data may be used with proper accreditation, subject to the GDC's access, sharing, and data-analysis policies. The public experimental archive contains open-access downloads and derived materials; it does not grant permission to access or redistribute GDC controlled-access data.
+
+## Synthetic datasets
+
+Synthetic datasets are generated for EucApprox experiments; some generators and comparative methods are drawn from DRToolbox. Any redistributed code derived from DRToolbox remains subject to DRToolbox's non-commercial permission terms, documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Copyright separation
+
+The rights in third-party source datasets are distinct from rights in independently authored EucApprox algorithms, processing scripts, analyses, and original documentation. See [COPYRIGHT.md](COPYRIGHT.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

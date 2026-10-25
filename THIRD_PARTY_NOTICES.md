@@ -1,57 +1,48 @@
 # Third-party software notices
 
-This document describes third-party components in, or used by, the **EucApprox** research repository. It does **not** license the independently authored EucApprox code. The absence of a general EucApprox `LICENSE` file means that no general permission to reproduce, modify, or redistribute that original code is granted by this repository; applicable copyright law, exceptions, and GitHub platform terms continue to apply. Third-party components retain their own permissions and restrictions.
+The independently authored EucApprox implementation is not distributed under a general open-source license. Copyright and permission information for that code appears in [COPYRIGHT.md](COPYRIGHT.md). The third-party components identified below retain their respective copyrights and licensing conditions.
 
-## 1. Modified DRToolbox routines — **included source files**
+## Modified DRToolbox routines
 
-**Upstream:** Laurens van der Maaten, *Matlab Toolbox for Dimensionality Reduction*  
-**Project:** https://lvdmaaten.github.io/drtoolbox/  
-**Permission statement:** The upstream project permits use, modification and redistribution **for non-commercial purposes only**. See its website and the copyright/permission headers in the files listed below.
+**Original software:** Matlab Toolbox for Dimensionality Reduction (DRToolbox), Laurens van der Maaten, Delft University of Technology.  
+**Source and permission terms:** https://lvdmaaten.github.io/drtoolbox/
 
-Files in this repository derived from DRToolbox:
+The following files are adapted from original DRToolbox routines:
 
 - `IntrnscVrs/hlle_intrnsc.m`
 - `IntrnscVrs/laplacian_eigen_intrnsc.m`
 - `IntrnscVrs/lle_intrnsc.m`
 - `IntrnscVrs/ltsa_intrnsc.m`
 
-**Modification disclosure:** These are modified, *intrinsic-distance-graph* variants of DRToolbox's corresponding manifold-learning algorithms. The routines have been adapted to operate on graph distances/neighborhood information rather than requiring the original feature-based inputs; additional changes appear in each source file. Original authorship and permission notices are retained in the source headers.
+They implement intrinsic-distance-graph variants of the corresponding dimensionality-reduction algorithms. The original DRToolbox attribution and permission statements are retained in the source files.
 
-**Important:** The upstream non-commercial restriction continues to apply to these derived files. Public distribution of EucApprox does not expand those permissions, nor does the absence of an EucApprox license remove the upstream permissions.
+DRToolbox permits use, modification, and redistribution **for non-commercial purposes only**. These conditions continue to govern the adapted DRToolbox code and are not superseded by the copyright notice covering independently authored EucApprox code.
 
-## 2. HYPRE sparse solvers — **included binary files**
+## HYPRE
 
-**Upstream:** HYPRE Project, Lawrence Livermore National Laboratory and other contributors  
+**Upstream project:** HYPRE Project, Lawrence Livermore National Laboratory and other HYPRE contributors.  
 **Project:** https://github.com/hypre-space/hypre  
-**Upstream licensing:** `Apache-2.0 OR MIT` (recipient may choose either).  
-**MIT notice:** [`THIRD_PARTY_LICENSES/HYPRE-LICENSE-MIT.txt`](THIRD_PARTY_LICENSES/HYPRE-LICENSE-MIT.txt)  
-**Upstream notices:** [COPYRIGHT](https://github.com/hypre-space/hypre/blob/master/COPYRIGHT), [NOTICE](https://github.com/hypre-space/hypre/blob/master/NOTICE), [LICENSE-APACHE](https://github.com/hypre-space/hypre/blob/master/LICENSE-APACHE).
+**Licensing:** Apache License 2.0 **or** MIT License, at the recipient's option.  
+**MIT license notice:** [THIRD_PARTY_LICENSES/HYPRE-LICENSE-MIT.txt](THIRD_PARTY_LICENSES/HYPRE-LICENSE-MIT.txt).
 
-EucApprox contains optional, precompiled MATLAB MEX interfaces associated with HYPRE's algebraic-multigrid preconditioner:
+The repository includes the following optional, precompiled MATLAB interfaces associated with the HYPRE algebraic-multigrid preconditioner:
 
 - `EucldnEmbdngPublic/hypre_amg_mex.mexa64`
 - `EucldnEmbdngPublic/hypre_amg_mex.mexw64`
 
-They are **optional** and the repository's default setting leaves AMG disabled. The MIT license text is reproduced for the upstream HYPRE component; this is **not** a grant of an MIT license for EucApprox code.
+The HYPRE copyright and license conditions apply to the HYPRE portions of those binaries. The HYPRE license does not automatically extend to independently authored interface code or other separately licensed components. Upstream HYPRE notices are available in its [COPYRIGHT](https://github.com/hypre-space/hypre/blob/master/COPYRIGHT) and [NOTICE](https://github.com/hypre-space/hypre/blob/master/NOTICE) files. The default EucApprox configuration does not enable this optional preconditioner.
 
-**Binary provenance verification still required:** The repository archive does not identify the build date/version, author and license of the MATLAB MEX *wrapper*, or all libraries statically/dynamically incorporated into these two binaries. Before redistributing binaries, the maintainer must verify that HYPRE's licensing statement applies to the compiled version and that the wrapper and any bundled dependency licenses permit redistribution. The notice above does not independently establish those rights. If the provenance cannot be verified, remove the binaries from the public release and provide separate installation/build instructions instead.
+## MATLAB UMAP
 
-## 3. MATLAB UMAP — **external download, not bundled**
+**Implementation:** Connor Meehan, Jonathan Ebrahimian, Wayne Moore, and Stephen Meehan, *Uniform Manifold Approximation and Projection (UMAP)*, MATLAB Central File Exchange.  
+**Source and license:** https://www.mathworks.com/matlabcentral/fileexchange/71902-uniform-manifold-approximation-and-projection-umap
 
-**Distribution:** Connor Meehan, Jonathan Ebrahimian, Wayne Moore, and Stephen Meehan, *Uniform Manifold Approximation and Projection (UMAP)*, MATLAB Central File Exchange.  
-**Project/download:** https://www.mathworks.com/matlabcentral/fileexchange/71902-uniform-manifold-approximation-and-projection-umap  
-**Original UMAP algorithm:** Leland McInnes, John Healy and James Melville.
+The MATLAB UMAP implementation is an external comparison dependency and is **not included** in this repository. Its distribution and use are governed by the license accompanying the separately obtained implementation.
 
-UMAP is a separately installed comparison dependency; its source and binaries are **not included** in this repository archive. Users must obtain it from its original distributor and comply with the terms accompanying the particular version they download. Do not assume that the original Python UMAP project's license necessarily governs every file in this MATLAB distribution.
+## MATLAB
 
-## 4. MATLAB and other external requirements
+MATLAB and MathWorks toolboxes are separate products governed by their applicable MathWorks licenses. They are not redistributed in this repository.
 
-MATLAB and any required MathWorks toolboxes are proprietary third-party products, separately licensed by MathWorks. EucApprox does not distribute MATLAB. Other baseline tools installed by users retain their respective source licenses.
+## Experimental datasets
 
-## 5. Datasets are separately documented
-
-MNIST, Fashion-MNIST, and NCI Genomic Data Commons (GDC) data are **not licensed by the EucApprox copyright holder**. Their attribution, reuse conditions, download sources, and processed-data status are documented in [`DATASETS.md`](DATASETS.md). Some processed files are distributed through a **separate external data archive**, not in the GitHub source repository. That archive should contain its own copy of [`DATA_ARCHIVE_NOTICE.md`](DATA_ARCHIVE_NOTICE.md) and any accompanying required notices.
-
-## Questions or corrections
-
-Licensing statements are based on the upstream project notices linked above and the contents of the archived public repository. If another upstream license or copyright attribution applies to a specific file, that file's actual license takes precedence. Direct questions about permission to reuse the independently authored EucApprox implementation to the repository maintainer.
+MNIST, Fashion-MNIST, and NCI Genomic Data Commons data are documented in [DATASETS.md](DATASETS.md). The original data providers' terms are separate from those governing EucApprox software.
