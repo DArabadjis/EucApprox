@@ -1,7 +1,7 @@
 # EucApprox experimental data: attribution and usage terms
 
 **Accompanying software:** https://github.com/DArabadjis/EucApprox  
-**Detailed dataset information:** https://github.com/DArabadjis/EucApprox/blob/main/DATASETS.md
+**Detailed dataset information:** https://github.com/DArabadjis/EucApprox/DATASETS.md
 
 ## MNIST
 
